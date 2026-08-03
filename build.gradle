@@ -50,3 +50,10 @@ jar {
         attributes 'FMLCorePluginContainsFMLMod': 'true'
     }
 }
+downloadClient {
+    url = "https://bmclapi2.bangbang93.com/version/1.7.10/client"
+}
+
+downloadServer {
+    url = "https://bmclapi2.bangbang93.com/version/1.7.10/server"
+}
