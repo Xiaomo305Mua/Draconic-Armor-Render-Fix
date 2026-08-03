@@ -85,7 +85,8 @@ public class DARFTransformer implements IClassTransformer {
     private static boolean insertBindTexture(MethodNode method) {
         boolean inserted = false;
         for (AbstractInsnNode insn : method.instructions.toArray()) {
-            if (insn.getOpcode() == Opcodes.INVOKEVIRTUAL
+            int op = insn.getOpcode();
+            if ((op == Opcodes.INVOKESPECIAL || op == Opcodes.INVOKEVIRTUAL)
                     && insn instanceof MethodInsnNode
                     && METHOD_COMPILE.equals(((MethodInsnNode) insn).name)
                     && METHOD_DESC.equals(((MethodInsnNode) insn).desc)) {
