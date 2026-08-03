@@ -16,9 +16,9 @@ Supports any version of Draconic Evolution and its forks.
 
 ## Comparison
 
-| ON | OFF |
+| OFF | ON |
 |---|---|
-| <img src="resources/ON.png" width="400"> | <img src="resources/OFF.png" width="400"> |
+| <img src="resources/OFF.png" width="400"> | <img src="resources/ON.png" width="400"> |
 
 ## Support
 
