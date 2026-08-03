@@ -6,7 +6,7 @@
   <img src="resources/Logo.png" width="450">
 </p>
 
-Fixes the color-loss rendering issue of Draconic Armor and Wyvern Armor in [Draconic Evolution](https://www.curseforge.com/minecraft/mc-mods/draconic-evolution) for 1.7.10 Forge.
+Fixes the color-loss rendering issue of Draconic Armor and Wyvern Armor in [Draconic Evolution](https://www.curseforge.com/minecraft/mc-mods/draconic-evolution) for Forge 1.7.10.
 
 Mainly targeting mobile devices, such as [Fold Craft Launcher](https://github.com/FCL-Team/FoldCraftLauncher) and [Zalith Launcher 2](https://github.com/ZalithLauncher/ZalithLauncher2).
 
@@ -28,4 +28,4 @@ Supports any version of Draconic Evolution and its forks.
 
 ## License
 
-This project is licensed under the [LGPL-3.0 License](./LICENSE)
+This project is licensed under the [LGPL-3.0](./LICENSE).
