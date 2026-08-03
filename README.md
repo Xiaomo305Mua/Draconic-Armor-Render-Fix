@@ -1,6 +1,6 @@
-# 龙之研究盔甲渲染修复
+# 龙之盔甲渲染修复
 
-[English](./README.md) | [中文版]
+[English](./README.md) | [简体中文]
 
 <p align="center">
   <img src="resources/Logo.png" width="450">
@@ -10,9 +10,9 @@
 
 ## 效果对比
 
-| 开启（修复后） | 关闭（修复前） |
+| 开启 | 关闭 |
 |---|---|
-| <img src="resources/en_US_ON.png" width="400"> | <img src="resources/en_US_OFF.png" width="400"> |
+| <img src="resources/开启.png" width="400"> | <img src="resources/关闭.png" width="400"> |
 
 ## 特点
 
@@ -36,7 +36,3 @@
 <a href="https://afdian.com/a/你的用户名">
   <img src="resources/ifdian.png" width="30">
 </a>
-
-## 作者
-
-Xiaomo305Mua
