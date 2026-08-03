@@ -35,11 +35,19 @@ minecraft {
 }
 
 processResources {
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-        expand project.properties
+        expand(
+            'modId': modId,
+            'modName': modName,
+            'Description': Description,
+            'modVersion': modVersion,
+            'minecraftVersion': minecraftVersion,
+            'modUrl': modUrl,
+            'authorList': authorList,
+            'credits': credits,
+            'logoFile': logoFile
+        )
     }
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
