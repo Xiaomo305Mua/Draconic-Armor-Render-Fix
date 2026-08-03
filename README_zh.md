@@ -18,7 +18,7 @@
 
 | 开启 | 关闭 |
 |---|---|
-| <img src="resources/开启.png" width="400"> | <img src="resources/关闭.png" width="400"> |
+| <img src="resources/ON_zh.png" width="400"> | <img src="resources/OFF_zh.png" width="400"> |
 
 ## 赞助
 
