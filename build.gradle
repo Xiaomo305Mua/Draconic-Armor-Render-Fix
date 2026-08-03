@@ -39,7 +39,7 @@ processResources {
     def mcModInfoProps = [
         'modId': p('modId'),
         'modName': p('modName'),
-        'Description': p('modDescription'),
+        'modDescription': p('modDescription'),
         'modVersion': p('modVersion'),
         'minecraftVersion': p('minecraftVersion'),
         'modUrl': p('modUrl'),
