@@ -20,10 +20,10 @@
 
 ## 赞助
 
-<a href="https://afdian.com/a/你的用户名">
+<a href="https://www.ifdian.net/a/Ink305Mua">
   <img src="resources/ifdian.png" width="30">
 </a>
 
 ## 开源协议
 
-本项目使用 XXX 授权（待定）
+本项目使用 [GPL-3.0 License](./LICENSE) 授权
