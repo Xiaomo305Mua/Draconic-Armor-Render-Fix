@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches: [ main ]
-    tags: [ '*' ]
+    tags: [ '[0-9]*' ]
   workflow_dispatch:
 
 permissions:
@@ -28,12 +28,6 @@ jobs:
 
       - name: Build
         run: gradle build --no-daemon
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: DraconicArmorRenderFix
-          path: build/libs/*.jar
 
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/')
