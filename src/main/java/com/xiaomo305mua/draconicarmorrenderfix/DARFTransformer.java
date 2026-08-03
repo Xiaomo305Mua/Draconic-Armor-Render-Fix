@@ -82,20 +82,25 @@ public class DARFTransformer implements IClassTransformer {
         return removed;
     }
 
-    private static boolean insertBindTexture(MethodNode method) {
-        boolean inserted = false;
-        for (AbstractInsnNode insn : method.instructions.toArray()) {
-            int op = insn.getOpcode();
-            if ((op == Opcodes.INVOKESPECIAL || op == Opcodes.INVOKEVIRTUAL)
-                    && insn instanceof MethodInsnNode
-                    && METHOD_COMPILE.equals(((MethodInsnNode) insn).name)
-                    && METHOD_DESC.equals(((MethodInsnNode) insn).desc)) {
-                method.instructions.insert(insn, buildBindTextureCall());
-                inserted = true;
+private static boolean insertBindTexture(MethodNode method) {
+    boolean inserted = false;
+    for (AbstractInsnNode insn : method.instructions.toArray()) {
+        int op = insn.getOpcode();
+        if ((op == Opcodes.INVOKESPECIAL || op == Opcodes.INVOKEVIRTUAL)
+                && insn instanceof MethodInsnNode
+                && METHOD_COMPILE.equals(((MethodInsnNode) insn).name)
+                && METHOD_DESC.equals(((MethodInsnNode) insn).desc)) {
+            AbstractInsnNode next = insn.getNext();
+            if (next != null) {
+                method.instructions.insert(next, buildBindTextureCall());
+            } else {
+                method.instructions.add(buildBindTextureCall());
             }
+            inserted = true;
         }
-        return inserted;
     }
+    return inserted;
+}
 
     private static InsnList buildBindTextureCall() {
         InsnList list = new InsnList();
