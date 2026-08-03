@@ -3,7 +3,7 @@
 [English](./README.md) | [中文版]
 
 <p align="center">
-  <img src="resources/Logo.png" width="600">
+  <img src="resources/Logo.png" width="450">
 </p>
 
 修复龙之研究（Draconic Evolution）1.7.10 盔甲渲染全白/异常的问题。兼容 GTNH 整合包与原版 Forge 1.7.10。
@@ -33,11 +33,9 @@
 
 ## 赞助
 
-<p align="center">
-  <a href="https://afdian.com/a/你的用户名">
-    <img src="resources/ifdian.png" width="30">
-  </a>
-</p>
+<a href="https://afdian.com/a/你的用户名">
+  <img src="resources/ifdian.png" width="30">
+</a>
 
 ## 作者
 
