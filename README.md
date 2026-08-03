@@ -26,4 +26,4 @@
 
 ## 开源协议
 
-本项目使用 [GPL-3.0 License](./LICENSE) 授权
+本项目使用 [LGPL-3.0 License](./LICENSE) 授权
