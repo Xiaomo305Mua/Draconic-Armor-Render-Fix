@@ -30,7 +30,10 @@ minecraft {
 
 jar {
     manifest = project.manifest {
-        from 'src/main/resources/META-INF/MANIFEST.MF'
+        attributes(
+            'FMLCorePlugin': 'com.xiaomo305mua.draconicarmorrenderfix.DARFCoreMod',
+            'FMLCorePluginContainsFMLMod': 'true'
+        )
     }
 }
 
