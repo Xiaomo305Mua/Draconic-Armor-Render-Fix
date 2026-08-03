@@ -35,19 +35,21 @@ minecraft {
 }
 
 processResources {
+    def p = { String k -> project.hasProperty(k) ? project.property(k) : "" }
+    def mcModInfoProps = [
+        'modId': p('modId'),
+        'modName': p('modName'),
+        'Description': p('Description'),
+        'modVersion': p('modVersion'),
+        'minecraftVersion': p('minecraftVersion'),
+        'modUrl': p('modUrl'),
+        'authorList': p('authorList'),
+        'credits': p('credits'),
+        'logoFile': p('logoFile')
+    ]
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-        expand(
-            'modId': modId,
-            'modName': modName,
-            'Description': Description,
-            'modVersion': modVersion,
-            'minecraftVersion': minecraftVersion,
-            'modUrl': modUrl,
-            'authorList': authorList,
-            'credits': credits,
-            'logoFile': logoFile
-        )
+        expand mcModInfoProps
     }
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
