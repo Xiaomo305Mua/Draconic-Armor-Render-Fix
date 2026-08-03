@@ -26,6 +26,34 @@ targetCompatibility = '1.8'
 minecraft {
     version = "1.7.10-10.13.4.1614-1.7.10"
     runDir = "eclipse"
+
+    replaceIn "DARFMod.java"
+    replace "@modId@", modId
+    replace "@modName@", modName
+    replace "@modVersion@", modVersion
+    replace "@modDependencies@", "required-after:" + modDependencies + ";"
+}
+
+processResources {
+    def p = { String k -> project.hasProperty(k) ? project.property(k) : "" }
+    def mcModInfoProps = [
+        'modId': p('modId'),
+        'modName': p('modName'),
+        'Description': p('Description'),
+        'modVersion': p('modVersion'),
+        'minecraftVersion': p('minecraftVersion'),
+        'modUrl': p('modUrl'),
+        'authorList': p('authorList'),
+        'credits': p('credits'),
+        'logoFile': p('logoFile')
+    ]
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand mcModInfoProps
+    }
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
 }
 
 jar {
