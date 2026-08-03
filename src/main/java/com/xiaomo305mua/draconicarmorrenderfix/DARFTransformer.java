@@ -30,8 +30,11 @@ public class DARFTransformer implements IClassTransformer {
 
     @Override
     public byte[] transform(String name, String transformedName, byte[] basicClass) {
-        if (basicClass == null || !TARGET_CLASS.equals(transformedName)) {
+        if (basicClass == null) {
             return null;
+        }
+        if (!TARGET_CLASS.equals(transformedName)) {
+            return basicClass;
         }
 
         ClassNode classNode = new ClassNode();
