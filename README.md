@@ -1,6 +1,6 @@
 # Draconic Armor Render Fix
 
-[English] | [简体中文](./README_zh_CN.md)
+[English] | [简体中文](./README_zh.md)
 
 <p align="center">
   <img src="resources/Logo.png" width="450">
