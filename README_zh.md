@@ -16,9 +16,9 @@
 
 ## 效果对比
 
-| 开启 | 关闭 |
+| 关闭 | 开启 |
 |---|---|
-| <img src="resources/ON_zh.png" width="400"> | <img src="resources/OFF_zh.png" width="400"> |
+| <img src="resources/OFF_zh.png" width="400"> | <img src="resources/ON_zh.png" width="400"> |
 
 ## 赞助
 
