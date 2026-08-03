@@ -33,7 +33,13 @@
 
 ## 赞助
 
-如果你喜欢这个模组，可以在[爱发电](https://afdian.com/a/你的用户名)上赞助我
+如果你喜欢这个模组，可以点下面的图片支持我：
+
+<p align="center">
+  <a href="https://afdian.com/a/你的用户名">
+    <img src="resources/ifdian.png" width="80">
+  </a>
+</p>
 
 ## 作者
 
