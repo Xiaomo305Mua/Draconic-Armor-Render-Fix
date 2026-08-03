@@ -25,7 +25,9 @@ public class DARFTransformer implements IClassTransformer {
     private static final String FIELD_TEXTURE_DESC = "Lnet/minecraft/util/ResourceLocation;";
     private static final String METHOD_COMPILE = "compileDisplayList";
     private static final String METHOD_RENDER = "render";
+    private static final String METHOD_RENDER_SRG = "func_78785_a";
     private static final String METHOD_RENDER_WITH_ROTATION = "renderWithRotation";
+    private static final String METHOD_RENDER_WITH_ROTATION_SRG = "func_78791_b";
     private static final String METHOD_DESC = "(F)V";
 
     @Override
@@ -45,7 +47,10 @@ public class DARFTransformer implements IClassTransformer {
             if (METHOD_COMPILE.equals(method.name) && METHOD_DESC.equals(method.desc)) {
                 patched |= removeBindTexture(method);
             } else if ((METHOD_RENDER.equals(method.name)
-                    || METHOD_RENDER_WITH_ROTATION.equals(method.name)) && METHOD_DESC.equals(method.desc)) {
+                    || METHOD_RENDER_SRG.equals(method.name)
+                    || METHOD_RENDER_WITH_ROTATION.equals(method.name)
+                    || METHOD_RENDER_WITH_ROTATION_SRG.equals(method.name))
+                    && METHOD_DESC.equals(method.desc)) {
                 patched |= insertBindTexture(method);
             }
         }
@@ -82,25 +87,25 @@ public class DARFTransformer implements IClassTransformer {
         return removed;
     }
 
-private static boolean insertBindTexture(MethodNode method) {
-    boolean inserted = false;
-    for (AbstractInsnNode insn : method.instructions.toArray()) {
-        int op = insn.getOpcode();
-        if ((op == Opcodes.INVOKESPECIAL || op == Opcodes.INVOKEVIRTUAL)
-                && insn instanceof MethodInsnNode
-                && METHOD_COMPILE.equals(((MethodInsnNode) insn).name)
-                && METHOD_DESC.equals(((MethodInsnNode) insn).desc)) {
-            AbstractInsnNode next = insn.getNext();
-            if (next != null) {
-                method.instructions.insert(next, buildBindTextureCall());
-            } else {
-                method.instructions.add(buildBindTextureCall());
+    private static boolean insertBindTexture(MethodNode method) {
+        boolean inserted = false;
+        for (AbstractInsnNode insn : method.instructions.toArray()) {
+            int op = insn.getOpcode();
+            if ((op == Opcodes.INVOKESPECIAL || op == Opcodes.INVOKEVIRTUAL)
+                    && insn instanceof MethodInsnNode
+                    && METHOD_COMPILE.equals(((MethodInsnNode) insn).name)
+                    && METHOD_DESC.equals(((MethodInsnNode) insn).desc)) {
+                AbstractInsnNode next = insn.getNext();
+                if (next != null) {
+                    method.instructions.insert(next, buildBindTextureCall());
+                } else {
+                    method.instructions.add(buildBindTextureCall());
+                }
+                inserted = true;
             }
-            inserted = true;
         }
+        return inserted;
     }
-    return inserted;
-}
 
     private static InsnList buildBindTextureCall() {
         InsnList list = new InsnList();
