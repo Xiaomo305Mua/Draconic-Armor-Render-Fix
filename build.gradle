@@ -1,3 +1,5 @@
+import net.minecraftforge.gradle.delayed.DelayedString
+
 buildscript {
     repositories {
         maven {
@@ -50,10 +52,11 @@ jar {
         attributes 'FMLCorePluginContainsFMLMod': 'true'
     }
 }
+
 downloadClient {
-    url = "https://bmclapi2.bangbang93.com/version/1.7.10/client"
+    url = new DelayedString(project, "https://bmclapi2.bangbang93.com/version/1.7.10/client")
 }
 
 downloadServer {
-    url = "https://bmclapi2.bangbang93.com/version/1.7.10/server"
+    url = new DelayedString(project, "https://bmclapi2.bangbang93.com/version/1.7.10/server")
 }
