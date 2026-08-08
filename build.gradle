@@ -66,9 +66,9 @@ jar {
 }
 
 downloadClient {
-    url = new DelayedString(project, "https://bmclapi2.bangbang93.com/version/1.7.10/client")
+    url = new DelayedString(project, "https://launcher.mojang.com/v1/objects/e80d9b3bf5085002218d4be59e668bac718abbc6/client.jar")
 }
 
 downloadServer {
-    url = new DelayedString(project, "https://bmclapi2.bangbang93.com/version/1.7.10/server")
+    url = new DelayedString(project, "https://launcher.mojang.com/v1/objects/952438ac4e01b4d115c5fc38f891710c4941df29/server.jar")
 }
